@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title ADMINCP
+    link(rel='stylesheet', href='../css/bootstrap.min.css')
+    link(rel='stylesheet', href='../css/mdb.min.css')
+    link(rel='stylesheet', href='../css/jquery.fancybox.min.css')
+    link(rel='stylesheet', href='../css/materialdesignicons.min.css')
+    link(rel='stylesheet', href='../css/sweetalert2.min.css')
+    link(rel='stylesheet', href='../css/layout.css')
+    link(rel='shortcut icon', href='../img/favicon.png')
+  body
+    aside
+      .menu-close
+        i.mdi.mdi-close.d-block.d-xl-none
+
+      .logo
+        a(href='index.html')
+          img.logo-large(src="../img/logo.png")
+        img.logo-mini(src="../img/logo-mini.png")
+      .menu
+        nav#sidebar.sidebar
+          ul.nav            
+            li.nav-item
+              a.nav-link.waves-effect(data-toggle='collapse', href='#manager', aria-expanded='false', aria-controls='ui-basic')
+                i.mdi.mdi-view-dashboard-outline.menu-icon
+                span.menu-title Quản lý website
+              i.mdi.mdi-chevron-down.menu-down(data-toggle='collapse', href='#manager', aria-expanded='false', aria-controls='ui-basic')
+              #manager.collapse.show
+                ul.nav.flex-column.sub-menu
+                  li.nav-item
+                    a.nav-link(href='bang-dieu-khien.html') Bảng điều khiển
+                  li.nav-item
+                    a.nav-link(href='cau-hinh-tong-quat.html') Cấu hình tổng quát
+
+            li.nav-item
+              a.nav-link.waves-effect(data-toggle='collapse', href='#account', aria-expanded='false', aria-controls='ui-basic')
+                i.mdi.mdi-account-outline.menu-icon
+                span.menu-title Quản lý tài khoản
+              i.mdi.mdi-chevron-down.menu-down(data-toggle='collapse', href='#account', aria-expanded='false', aria-controls='ui-basic')
+              #account.collapse.show
+                ul.nav.flex-column.sub-menu
+                  li.nav-item
+                    a.nav-link(href='danh-sach-tai-khoan.html') Danh sách tài khoản
+                  li.nav-item
+                    a.nav-link(href='them-tai-khoan.html') Thêm tài khoản
+
+
+    main
+      header
+        .container-fluid
+          .menu-btn
+            i.mdi.mdi-menu               
+          .username
+            | Trí Việt
+          
+          .custom
+            ul
+              li.noti.bell
+                a(href='quan-ly-lien-he.html', title='Xem thông báo')
+                  i.mdi.mdi-bell-outline
+              li                  
+                a(href='#')
+                  i.mdi.mdi-eye-outline
+                  span Xem trang
+              li
+                a(href='doi-mat-khau.html')
+                  i.mdi.mdi-key-change
+                  span Đổi mật khẩu
+              li
+                a(href='#')
+                  i.mdi.mdi-logout
+                  span Đăng xuất
+              
+                  
+
+      article
+        .overlay-menu
+
+        block main
+
+      footer
+        .container-fluid
+          h5 
+            | Coppyright © 2019 
+            span
+              a(href='http://triviet.net/') TRI VIET. 
+            | All Reserved
+          
+          ul
+            li
+              a(href='tel:0962375579') 
+                i.mdi.mdi-phone-in-talk
+                | 0962 37 55 79
+            li
+              a(href='mailto:info@triviet.net') 
+                i.mdi.mdi-email-outline
+                | info@triviet.net
+            
+
+      script(src='../js/jquery-3.3.1.min.js')
+      script(src='../js/bootstrap.min.js')
+      script(src='../js/mdb.min.js')
+      script(src='../js/jquery.fancybox.min.js')
+      script(src='../js/sweetalert2.min.js')
+      script(src='../js/layout.js')
