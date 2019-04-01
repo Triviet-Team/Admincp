@@ -10,6 +10,7 @@ html(lang="en")
     link(rel='stylesheet', href='../css/jquery.fancybox.min.css')
     link(rel='stylesheet', href='../css/materialdesignicons.min.css')
     link(rel='stylesheet', href='../css/sweetalert2.min.css')
+    link(rel="stylesheet", href='../css/dataTables.bootstrap4.min.css')
     link(rel='stylesheet', href='../css/layout.css')
     link(rel='shortcut icon', href='../img/favicon.png')
   body
@@ -18,7 +19,7 @@ html(lang="en")
         i.mdi.mdi-close.d-block.d-xl-none
 
       .logo
-        a(href='index.html')
+        a(href='bang-dieu-khien.html')
           img.logo-large(src="../img/logo.png")
         img.logo-mini(src="../img/logo-mini.png")
       .menu
@@ -38,7 +39,7 @@ html(lang="en")
 
             li.nav-item
               a.nav-link.waves-effect(data-toggle='collapse', href='#account', aria-expanded='false', aria-controls='ui-basic')
-                i.mdi.mdi-account-outline.menu-icon
+                i.mdi.mdi-account-circle-outline.menu-icon
                 span.menu-title Quản lý tài khoản
               i.mdi.mdi-chevron-down.menu-down(data-toggle='collapse', href='#account', aria-expanded='false', aria-controls='ui-basic')
               #account.collapse.show
@@ -48,6 +49,87 @@ html(lang="en")
                   li.nav-item
                     a.nav-link(href='them-tai-khoan.html') Thêm tài khoản
 
+            li.nav-item
+              a.nav-link.waves-effect(data-toggle='collapse', href='#order-menu', aria-expanded='false', aria-controls='ui-basic')
+                i.mdi.mdi-shopping.menu-icon
+                span.menu-title Quản lý đơn hàng
+              i.mdi.mdi-chevron-down.menu-down(data-toggle='collapse', href='#order-menu', aria-expanded='false', aria-controls='ui-basic')
+              #order-menu.collapse.show
+                ul.nav.flex-column.sub-menu
+                  li.nav-item
+                    a.nav-link(href='danh-sach-don-hang.html') Danh sách đơn hàng
+
+            li.nav-item
+              a.nav-link.waves-effect(data-toggle='collapse', href='#product-manager', aria-expanded='false', aria-controls='ui-basic')
+                i.mdi.mdi-shopify.menu-icon
+                span.menu-title Quản lý sản phẩm
+              i.mdi.mdi-chevron-down.menu-down(data-toggle='collapse', href='#product-manager', aria-expanded='false', aria-controls='ui-basic')
+              #product-manager.collapse.show
+                ul.nav.flex-column.sub-menu
+                  li.nav-item
+                    a.nav-link(href='danh-muc-san-pham.html') Danh mục sản phẩm
+                  li.nav-item
+                    a.nav-link(href='them-danh-muc.html') Thêm danh mục
+                  li.nav-item
+                    a.nav-link(href='danh-sach-san-pham.html') Danh sách sản phẩm
+                  li.nav-item
+                    a.nav-link(href='them-san-pham.html') Thêm sản phẩm
+
+            li.nav-item
+              a.nav-link.waves-effect(data-toggle='collapse', href='#post-manager', aria-expanded='false', aria-controls='ui-basic')
+                i.mdi.mdi-shopify.menu-icon
+                span.menu-title Quản lý sản phẩm
+              i.mdi.mdi-chevron-down.menu-down(data-toggle='collapse', href='#post-manager', aria-expanded='false', aria-controls='ui-basic')
+              #post-manager.collapse.show
+                ul.nav.flex-column.sub-menu
+                  li.nav-item
+                    a.nav-link(href='danh-muc-bai-viet.html') Danh mục bài viết
+                  li.nav-item
+                    a.nav-link(href='them-danh-muc.html') Thêm danh mục
+                  li.nav-item
+                    a.nav-link(href='danh-sach-bai-viet.html') Danh sách bài viết
+                  li.nav-item
+                    a.nav-link(href='them-bai-viet.html') Thêm bài viết
+
+            li.nav-item
+              a.nav-link.waves-effect(data-toggle='collapse', href='#static-page', aria-expanded='false', aria-controls='ui-basic')
+                i.mdi.mdi-shopify.menu-icon
+                span.menu-title Quản lý trang tĩnh
+              i.mdi.mdi-chevron-down.menu-down(data-toggle='collapse', href='#static-page', aria-expanded='false', aria-controls='ui-basic')
+              #static-page.collapse.show
+                ul.nav.flex-column.sub-menu
+                  li.nav-item
+                    a.nav-link(href='danh-sach-trang-tinh.html') Danh sách trang tĩnh
+                  li.nav-item
+                    a.nav-link(href='them-trang-tinh.html') Thêm trang tĩnh
+
+            li.nav-item
+              a.nav-link.waves-effect(data-toggle='collapse', href='#contact-manager', aria-expanded='false', aria-controls='ui-basic')
+                i.mdi.mdi-shopify.menu-icon
+                span.menu-title Quản lý liên hệ
+              i.mdi.mdi-chevron-down.menu-down(data-toggle='collapse', href='#contact-manager', aria-expanded='false', aria-controls='ui-basic')
+              #contact-manager.collapse.show
+                ul.nav.flex-column.sub-menu
+                  li.nav-item
+                    a.nav-link(href='danh-sach-lien-he.html') Danh sách liên hệ
+
+            li.nav-item
+              a.nav-link.waves-effect(data-toggle='collapse', href='#ads-manager', aria-expanded='false', aria-controls='ui-basic')
+                i.mdi.mdi-shopify.menu-icon
+                span.menu-title Quản lý ADS
+              i.mdi.mdi-chevron-down.menu-down(data-toggle='collapse', href='#ads-manager', aria-expanded='false', aria-controls='ui-basic')
+              #ads-manager.collapse.show
+                ul.nav.flex-column.sub-menu
+                  li.nav-item
+                    a.nav-link(href='danh-muc-ads.html') Danh mục ADS
+                  li.nav-item
+                    a.nav-link(href='them-danh-muc.html') Thêm danh mục
+                  li.nav-item
+                    a.nav-link(href='danh-sach-ads.html') Danh sách ADS
+                  li.nav-item
+                    a.nav-link(href='them-ads.html') Thêm ADS
+            
+            
 
     main
       header
@@ -71,7 +153,7 @@ html(lang="en")
                   i.mdi.mdi-key-change
                   span Đổi mật khẩu
               li
-                a(href='#')
+                a(href='login.html')
                   i.mdi.mdi-logout
                   span Đăng xuất
               
@@ -106,4 +188,8 @@ html(lang="en")
       script(src='../js/mdb.min.js')
       script(src='../js/jquery.fancybox.min.js')
       script(src='../js/sweetalert2.min.js')
+      script(src='../js/jquery.dataTables.min.js')
+      script(src='../js/dataTables.bootstrap4.min.js')
+      script(src="https://cdn.ckeditor.com/ckeditor5/12.0.0/classic/ckeditor.js")
+      script(src='../js/data.js')
       script(src='../js/layout.js')

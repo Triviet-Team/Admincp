@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title ADMINCP
+    link(rel='stylesheet', href='../css/materialdesignicons.min.css')
+    link(rel='stylesheet', href='../css/bootstrap.min.css')
+    link(rel='stylesheet', href='../css/mdb.min.css')
+    link(rel='stylesheet', href='../css/login.css')
+    link(rel='shortcut icon', href='../img/favicon.png')
+    style
+
+  body
+    .container(style="margin-top: 50px")
+      h6.mb-4.text-center Chào mừng bạn đến với trang quản trị của chúng tôi, vui lòng đăng nhập
+      .box-login
+        h5 Đăng nhập
+
+        form
+          .md-form.text-left
+            i.mdi.mdi-account.prefix
+            input#account.form-control(type='text')
+            label(for='account') Tài khoản
+
+          .md-form.text-left
+            i.mdi.mdi-lock.prefix
+            input#password.form-control(type='password')
+            label(for='password') Mật khẩu
+          
+          button.btn.btn-primary.mt-2.mb-5.text-center(type='submit') Đăng nhập
+
+    
+    script(src='../js/jquery-3.3.1.min.js')
+    script(src='../js/bootstrap.min.js')
+    script(src='../js/mdb.min.js')
+    script.
+      $(document).ready(() => {
+      $('input#account').focus();
+      });

@@ -1,5 +1,6 @@
 $main-color: #1E74DA;
 
+
 @mixin o1 {
   overflow: hidden;
   display: -webkit-box;
@@ -26,6 +27,12 @@ $main-color: #1E74DA;
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
+}
+
+@mixin sha {
+  background: white;
+  border: 1px solid #e1e1e1;
+  box-shadow: 0 3px 6px rgba($color: #000000, $alpha: .16);
 }
 
 // ------------------------------------------------------
@@ -283,6 +290,9 @@ aside {
           }
         }
 
+        ul li a {
+          padding: 0 5px;
+        }
 
         .menu-title.mini {
           position: absolute;
@@ -528,42 +538,6 @@ header {
   }
 }
 
-.title-page {
-  margin-bottom: 30px;
-
-  h1 {
-    text-transform: uppercase;
-    font-weight: bold;
-    text-align: center;
-  }
-}
-
-.pagination {
-  margin-bottom: 30px;
-  margin-top: 30px;
-
-  .page-item .page-link {
-    background: none;
-    border: 1px solid #cccccc;
-    color: #5E5E5E;
-    border-radius: 3px;
-    transition: .5s;
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
-    text-align: center;
-    line-height: 25px;
-    font-weight: bold;
-
-    &:hover,
-    &.active {
-      background: $main_color;
-      color: white;
-      border-color: $main_color;
-    }
-  }
-}
-
 footer {
   border-top: 1px solid #f4f4f4;
   padding: 20px 0;
@@ -576,7 +550,7 @@ footer {
 
   h5 {
     font-size: 14px;
-    width: 350px;
+    width: 300px;
   }
 
   a {
@@ -590,10 +564,15 @@ footer {
   ul {
     width: 100%;
     text-align: right;
+    width: calc(100% - 300px);
 
     li {
       display: inline-block;
       margin-left: 30px;
+
+      &:first-child {
+        margin-left: 0;
+      }
 
       i {
         color: $main-color;

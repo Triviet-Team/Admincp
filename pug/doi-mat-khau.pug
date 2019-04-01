@@ -1,0 +1,24 @@
+extends _inc
+
+block main  
+  section.change-password 
+    .container-fluid
+      form(action="")
+        .md-form.form-sm.text-left
+          i.mdi.mdi-lock-alert.prefix
+          input#oldPassword.form-control.validate(type='text')
+          label(for='oldPassword') Mật khẩu cũ
+
+        .md-form.form-sm.text-left
+          i.mdi.mdi-lock.prefix
+          input#newPassword.form-control.validate(type='password')
+          label(for='newPassword') Mật khẩu mới
+        
+        .md-form.form-sm.text-left
+          i.mdi.mdi-lock-plus.prefix
+          input#rePassword.form-control.validate(type='password')
+          label(for='rePassword') Nhập lại mật khẩu mới
+        
+        .change-pasword-btn.text-center
+          button.btn.btn-primary.text-center(type='submit') Lưu lại
+          a.btn.btn-light(href='danh-sach-tai-khoan.html') Trở về

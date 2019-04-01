@@ -110,9 +110,51 @@
       </header>
       <article>
         <div class="overlay-menu"></div>
-        <section class="dashboard"> 
+        <section class="product-manager"> 
           <div class="container-fluid">
-            <h1>Danh sách tài khoản nè</h1>
+            <div class="btn-top text-center">
+              <button class="btn btn-primary waves-effect"><a href="them-san-pham.html">Thêm mới</a></button>
+              <button class="btn btn-success waves-effect" id="active-all">Hiển thị toàn bộ</button>
+              <button class="btn btn-warning waves-effect" id="private-all">Ẩn toàn bộ</button>
+              <button class="btn btn-danger waves-effect" id="delete-all">Xóa toàn bộ</button>
+              <button class="btn btn-info waves-effect" id="go-trash">Dọn rác</button>
+            </div>
+            <div class="table-responsive">
+              <table class="table table-bordered display table-hover product-table" style="width: 100%">
+                <thead>
+                  <tr>
+                    <th style="width: 20px" scope="col">
+                      <label class="check-box" style="margin-top: -17px">
+                        <input type="checkbox" checked="checked"/><span class="checkmark"></span>
+                      </label>
+                    </th>
+                    <th scope="col">Mã</th>
+                    <th scope="col">Danh mục</th>
+                    <th scope="col">Sản phẩm</th>
+                    <th scope="col">Giá</th>
+                    <th scope="col">Trạng thái</th>
+                    <th scope="col">Ngày tạo</th>
+                    <th scope="col">Hành động</th>
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                    <th style="width: 20px" scope="col">
+                      <label class="check-box" style="margin-top: -17px">
+                        <input type="checkbox" checked="checked"/><span class="checkmark"></span>
+                      </label>
+                    </th>
+                    <th scope="col">Mã</th>
+                    <th scope="col">Danh mục</th>
+                    <th scope="col">Sản phẩm</th>
+                    <th scope="col">Giá</th>
+                    <th scope="col">Trạng thái</th>
+                    <th scope="col">Ngày tạo</th>
+                    <th scope="col">Hành động</th>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
           </div>
         </section>
       </article>

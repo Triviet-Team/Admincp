@@ -1,0 +1,80 @@
+extends _inc
+
+block main
+  .modal.order-modal.fade.view-order-1.show(tabindex='-1', role='dialog', aria-labelledby='exampleModalCenterTitle')
+    .modal-dialog.modal-lg.modal-dialog-centered(role='document')
+      .modal-content
+        .modal-header
+          h5.modal-title Chi tiết đơn hàng
+          button.close(type='button', data-dismiss='modal', aria-label='Close')
+            span(aria-hidden='true') ×
+        .modal-body
+          .row
+            .col-lg-6
+              .order-img
+                img(src='../img/product-1.png')
+                h5 Ghế lưới nhân viên TT - 001
+                h4 Giá:
+                  span 570.000 đ
+                
+                .order-btn
+                  button.btn.btn-primary Xử lý xong
+                  button.btn.btn-danger Hủy đơn
+                    
+            .col-lg-6
+              .order-detail
+                h4 Thông tin thanh toán
+                ul
+                  li
+                    h5 Mã giao dịch:
+                    span 10
+                  li
+                    h5 Ngày tạo:
+                    span 01/04/2019
+                  li
+                    h5 Số lượng:
+                    span 1
+                  li
+                    h5 Số tiền:
+                    span 500.000 đ
+                
+                h4 Thông tin khách hàng
+                ul
+                  li
+                    h5 Họ tên:
+                    span Thái
+                  li
+                    h5 Điện thoại:
+                    span 0912 345 678
+                  li
+                    h5 Email:
+                    span kemmie.xd@gmail.com
+                  li
+                    h5 Địa chỉ:
+                    span Số 69, Califonia, US
+                  li
+                    h5 Lời nhắn:
+                    span Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, libero error voluptas sequi optio ea quo architecto fugit? Iure, laudantium?
+        
+        .modal-footer
+          button.btn.btn-light(type='button', data-dismiss='modal') Đóng
+
+  section.general-table
+    .container-fluid
+      .title-page
+        h1 
+          a Danh sách đơn hàng
+
+      .table-responsive
+        table.table.table-bordered.display.table-hover.order-table(style='width: 100%')
+          thead
+            tr
+              th(scope='col') Mã
+              th(scope='col') Sản phẩm
+              th(scope='col') Khách hàng
+              th(scope='col') Số lượng
+              th(scope='col') Số tiền
+              th(scope='col') Trạng thái
+              th(scope='col') Ngày nhận
+              th(scope='col') Hành động
+          

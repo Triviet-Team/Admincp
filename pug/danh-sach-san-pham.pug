@@ -1,0 +1,44 @@
+extends _inc
+
+block main
+  section.product-manager 
+    .container-fluid
+      .btn-top.text-center
+        button.btn.btn-primary.waves-effect
+          a(href='them-san-pham.html') Thêm mới
+        button.btn.btn-success.waves-effect#active-all Hiển thị toàn bộ
+        button.btn.btn-warning.waves-effect#private-all Ẩn toàn bộ
+        button.btn.btn-danger.waves-effect#delete-all Xóa toàn bộ
+        button.btn.btn-info.waves-effect#go-trash Dọn rác
+
+      .table-responsive
+        table.table.table-bordered.display.table-hover.product-table(style='width: 100%')
+          thead
+            tr
+              th(style="width: 20px", scope='col')
+                label.check-box(style="margin-top: -17px")
+                  input(type='checkbox', checked='checked')
+                  span.checkmark
+
+              th(scope='col') Mã
+              th(scope='col') Danh mục
+              th(scope='col') Sản phẩm
+              th(scope='col') Giá
+              th(scope='col') Trạng thái
+              th(scope='col') Ngày tạo
+              th(scope='col') Hành động
+          
+          tfoot
+            tr
+              th(style="width: 20px", scope='col')
+                label.check-box(style="margin-top: -17px")
+                  input(type='checkbox', checked='checked')
+                  span.checkmark
+
+              th(scope='col') Mã
+              th(scope='col') Danh mục
+              th(scope='col') Sản phẩm
+              th(scope='col') Giá
+              th(scope='col') Trạng thái
+              th(scope='col') Ngày tạo
+              th(scope='col') Hành động

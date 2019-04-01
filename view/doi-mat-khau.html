@@ -110,9 +110,25 @@
       </header>
       <article>
         <div class="overlay-menu"></div>
-        <section class="dashboard"> 
+        <section class="change-password"> 
           <div class="container-fluid">
-            <h1>Danh sách tài khoản nè</h1>
+            <form action="">
+              <div class="md-form form-sm text-left"><i class="mdi mdi-lock-alert prefix"></i>
+                <input class="form-control validate" id="oldPassword" type="text"/>
+                <label for="oldPassword">Mật khẩu cũ</label>
+              </div>
+              <div class="md-form form-sm text-left"><i class="mdi mdi-lock prefix"></i>
+                <input class="form-control validate" id="newPassword" type="password"/>
+                <label for="newPassword">Mật khẩu mới</label>
+              </div>
+              <div class="md-form form-sm text-left"><i class="mdi mdi-lock-plus prefix"></i>
+                <input class="form-control validate" id="rePassword" type="password"/>
+                <label for="rePassword">Nhập lại mật khẩu mới</label>
+              </div>
+              <div class="change-pasword-btn text-center">
+                <button class="btn btn-primary text-center" type="submit">Lưu lại</button><a class="btn btn-light" href="danh-sach-tai-khoan.html">Trở về</a>
+              </div>
+            </form>
           </div>
         </section>
       </article>

@@ -110,9 +110,91 @@
       </header>
       <article>
         <div class="overlay-menu"></div>
-        <section class="dashboard"> 
+        <div class="modal order-modal fade view-order-1 show" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle">
+          <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Chi tiết đơn hàng</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="order-img"><img src="../img/product-1.png"/>
+                      <h5>Ghế lưới nhân viên TT - 001</h5>
+                      <h4>Giá:<span>570.000 đ</span></h4>
+                      <div class="order-btn">
+                        <button class="btn btn-primary">Xử lý xong</button>
+                        <button class="btn btn-danger">Hủy đơn</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="order-detail">
+                      <h4>Thông tin thanh toán</h4>
+                      <ul>
+                        <li>
+                          <h5>Mã giao dịch:</h5><span>10</span>
+                        </li>
+                        <li>
+                          <h5>Ngày tạo:</h5><span>01/04/2019</span>
+                        </li>
+                        <li>
+                          <h5>Số lượng:</h5><span>1</span>
+                        </li>
+                        <li>
+                          <h5>Số tiền:</h5><span>500.000 đ</span>
+                        </li>
+                      </ul>
+                      <h4>Thông tin khách hàng</h4>
+                      <ul>
+                        <li>
+                          <h5>Họ tên:</h5><span>Thái</span>
+                        </li>
+                        <li>
+                          <h5>Điện thoại:</h5><span>0912 345 678</span>
+                        </li>
+                        <li>
+                          <h5>Email:</h5><span>kemmie.xd@gmail.com</span>
+                        </li>
+                        <li>
+                          <h5>Địa chỉ:</h5><span>Số 69, Califonia, US</span>
+                        </li>
+                        <li>
+                          <h5>Lời nhắn:</h5><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, libero error voluptas sequi optio ea quo architecto fugit? Iure, laudantium?</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-light" type="button" data-dismiss="modal">Đóng</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <section class="general-table">
           <div class="container-fluid">
-            <h1>Danh sách tài khoản nè</h1>
+            <div class="title-page">
+              <h1> <a>Danh sách đơn hàng</a></h1>
+            </div>
+            <div class="table-responsive">
+              <table class="table table-bordered display table-hover order-table" style="width: 100%">
+                <thead>
+                  <tr>
+                    <th scope="col">Mã</th>
+                    <th scope="col">Sản phẩm</th>
+                    <th scope="col">Khách hàng</th>
+                    <th scope="col">Số lượng</th>
+                    <th scope="col">Số tiền</th>
+                    <th scope="col">Trạng thái</th>
+                    <th scope="col">Ngày nhận</th>
+                    <th scope="col">Hành động</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
           </div>
         </section>
       </article>
