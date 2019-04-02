@@ -51,7 +51,7 @@ html(lang="en")
 
             li.nav-item
               a.nav-link.waves-effect(data-toggle='collapse', href='#order-menu', aria-expanded='false', aria-controls='ui-basic')
-                i.mdi.mdi-shopping.menu-icon
+                i.mdi.mdi-wallet-giftcard.menu-icon
                 span.menu-title Quản lý đơn hàng
               i.mdi.mdi-chevron-down.menu-down(data-toggle='collapse', href='#order-menu', aria-expanded='false', aria-controls='ui-basic')
               #order-menu.collapse.show
@@ -77,8 +77,8 @@ html(lang="en")
 
             li.nav-item
               a.nav-link.waves-effect(data-toggle='collapse', href='#post-manager', aria-expanded='false', aria-controls='ui-basic')
-                i.mdi.mdi-shopify.menu-icon
-                span.menu-title Quản lý sản phẩm
+                i.mdi.mdi-newspaper.menu-icon
+                span.menu-title Quản lý bài viết
               i.mdi.mdi-chevron-down.menu-down(data-toggle='collapse', href='#post-manager', aria-expanded='false', aria-controls='ui-basic')
               #post-manager.collapse.show
                 ul.nav.flex-column.sub-menu
@@ -93,7 +93,7 @@ html(lang="en")
 
             li.nav-item
               a.nav-link.waves-effect(data-toggle='collapse', href='#static-page', aria-expanded='false', aria-controls='ui-basic')
-                i.mdi.mdi-shopify.menu-icon
+                i.mdi.mdi-comment-text-outline.menu-icon
                 span.menu-title Quản lý trang tĩnh
               i.mdi.mdi-chevron-down.menu-down(data-toggle='collapse', href='#static-page', aria-expanded='false', aria-controls='ui-basic')
               #static-page.collapse.show
@@ -105,7 +105,7 @@ html(lang="en")
 
             li.nav-item
               a.nav-link.waves-effect(data-toggle='collapse', href='#contact-manager', aria-expanded='false', aria-controls='ui-basic')
-                i.mdi.mdi-shopify.menu-icon
+                i.mdi.mdi-email-outline.menu-icon
                 span.menu-title Quản lý liên hệ
               i.mdi.mdi-chevron-down.menu-down(data-toggle='collapse', href='#contact-manager', aria-expanded='false', aria-controls='ui-basic')
               #contact-manager.collapse.show
@@ -115,7 +115,7 @@ html(lang="en")
 
             li.nav-item
               a.nav-link.waves-effect(data-toggle='collapse', href='#ads-manager', aria-expanded='false', aria-controls='ui-basic')
-                i.mdi.mdi-shopify.menu-icon
+                i.mdi.mdi-credit-card.menu-icon
                 span.menu-title Quản lý ADS
               i.mdi.mdi-chevron-down.menu-down(data-toggle='collapse', href='#ads-manager', aria-expanded='false', aria-controls='ui-basic')
               #ads-manager.collapse.show
@@ -190,6 +190,6 @@ html(lang="en")
       script(src='../js/sweetalert2.min.js')
       script(src='../js/jquery.dataTables.min.js')
       script(src='../js/dataTables.bootstrap4.min.js')
-      script(src="https://cdn.ckeditor.com/ckeditor5/12.0.0/classic/ckeditor.js")
+      <script src="https://cdn.ckeditor.com/ckeditor5/12.0.0/decoupled-document/ckeditor.js"></script>
       script(src='../js/data.js')
       script(src='../js/layout.js')

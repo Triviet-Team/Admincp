@@ -18,22 +18,7 @@ $('.order-table').DataTable({
         );
       },
     },
-    { 
-      "data": "product",
-      "sortable": false,
-      "render": function(data, type, row) {
-        return (
-          `
-            <div class="text-left">
-              <a data-fancybox="gallery" href=${row.image}>
-                <img src=${row.image} />
-              </a> 
-              <h5>${row.name}</h5>
-            </div>
-          `
-        );
-      },
-    },
+    
     { 
       "data": "user",
       "render": function(data, type, row) {
@@ -122,7 +107,7 @@ $('.order-table').DataTable({
 });
 
 
-$('.product-table').DataTable({
+const productTable = $('.product-table').DataTable({
   "processing": true,
   "responsive": true,
   "deferRender": true,
@@ -170,7 +155,7 @@ $('.product-table').DataTable({
       "render": function(data, type, row) {
         return (
           `
-            <div class="text-left">
+            <div class="text-left" style="min-width: 250px">
               <a data-fancybox="gallery" href=${row.image}>
                 <img src=${row.image} />
               </a> 
@@ -263,26 +248,18 @@ $('.product-table').DataTable({
   "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "Tất cả"]],
 });
 
+filterCategory = () => {
+  let val = $('.filter-category select').val();
+  let replaceVal = val.replace(/-/g, '');
 
-$(document).ready(function() {
-  var table = $('.product-table').DataTable();
-
-  $(".product-table tfoot th").each( function ( i ) {
-    var select = $('<select><option value=""></option></select>')
-      .appendTo( $(this).empty() )
-      .on( 'change', function () {
-        table.column( i )
-          .search( $(this).val() )
-          .draw();
-        } );
-
-    table.column( i ).data().unique().sort().each( function ( d, j ) {
-      select.append( '<option value="'+d+'">'+d+'</option>' )
-    } );
-  } );
-} );
+  productTable
+    .columns(2)
+    .search(replaceVal)
+    .draw();
+}
 
 $(document).ready(() => {
+
   const Toast = Swal.mixin({
     toast: true,
     position: 'top-end',

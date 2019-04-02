@@ -1,0 +1,68 @@
+extends _inc
+
+block main
+  section.add-item
+    .container-fluid
+      .title-page
+        h1 
+          a Cấu hình tổng quát
+
+      form(action="")
+        select#select-status.form-control.mb-4
+          option(value="") Hiển thị
+          option(value="") Ẩn
+          option(value="") Xóa
+
+        select#select-category.form-control.mb-4
+          option(value="") Danh mục cha
+          option(value="") Danh mục cha
+          option(value="") Danh mục cha
+          option(value="") Danh mục cha
+          option(value="") Danh mục cha
+
+        .form-group
+          .row
+            .col-md-4
+              label.check-box.mb-2
+                input(type='checkbox')
+                span.checkmark
+                | Sản phẩm bán chạy
+            .col-md-4
+              label.check-box.mb-2
+                input(type='checkbox')
+                span.checkmark
+                | Sản phẩm nổi bật
+            .col-md-4
+              label.check-box.mb-2
+                input(type='checkbox')
+                span.checkmark
+                span Sản phẩm mới
+             
+
+
+        .md-form.mb-3
+          input#titleSite.form-control.form-control-sm(type='text')
+          label(for='titleSite') Title Site
+
+        .md-form.mb-3
+          input#titleSite1.form-control.form-control-sm(type='text')
+          label(for='titleSite1') Keywords Site
+
+        .md-form.mb-3
+          textarea#descSite.md-textarea.form-control(rows='5')
+          label(for='descSite') Description Site
+
+        .md-form.mb-3
+          input#code.form-control.form-control-sm(type='text')
+          label(for='code') Mã số thuế
+
+        .form-group.mt-4.mb-3
+          #toolbar-container
+          #editor
+          
+
+
+
+        .text-center
+          button.btn.btn-primary.mr-3 Lưu lại
+          a.btn.btn-light(href='bang-dieu-khien.html') Trở về

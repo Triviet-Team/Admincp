@@ -167,10 +167,6 @@ section .md-form {
     }
   }
 
-  div.dataTables_wrapper div.dataTables_filter input {
-    background: #e1e1e1;
-  }
-
   .status {
     width: 90px;
     margin: auto;
@@ -257,35 +253,37 @@ section .md-form {
 }
 
 .order-modal {
-  .order-img {
-    img {
-      margin-bottom: 15px;
+  .order-product {
+    margin-bottom: 20px;
+    display: flex;
+    border-bottom: 1px solid #e1e1e1;
+    padding-bottom: 20px;
+
+    &-img {
+      width: 150px;
     }
 
-    h5 {
-      font-weight: 500;
-      margin-bottom: 5px;
-    }
-
-    h4 {
-      margin-bottom: 10px;
+    &-detail {
+      width: calc(100% - 160px);
       
-      span {
-        font-weight: 600;
-        margin-left: 20px;
-      }
-    }
+      h5 {
+        font-weight: 500;
+        margin-bottom: 5px;
 
-    button {
-      margin-bottom: 20px;
+        span {
+          margin-left: 15px;
+          font-weight: 500;
+          color: $main-color;
+        }
+      }
     }
   }
 
   .order-detail {
+
     h4 {
-      border-bottom: 1px solid #e1e1e1;
-      padding-bottom: 5px;
       margin-bottom: 15px;
+      font-weight: 600;
     }
 
     ul {
@@ -307,13 +305,25 @@ section .md-form {
   }
 }
 
+.order-table {
+  td {
+    text-align: left;
+  }
+}
+
 .btn-top {
   margin-bottom: 30px;
+  text-align: center;
 
   a {
     padding: 14px 35px;
     margin: 0px -35px;
   }
+}
+
+.btn.disabled, .btn:disabled {
+  opacity: 1;
+  filter: brightness(.5);
 }
 
 .check-box {
@@ -323,6 +333,7 @@ section .md-form {
   font-size: 14px;
   margin-left: 5px;
   padding-left: 25px;
+  color: #585858;
 }
 
 .check-box input {
@@ -335,12 +346,13 @@ section .md-form {
 
 .checkmark {
   position: absolute;
-  top: 0;
+  top: 2px;
   left: 0;
   height: 15px;
   width: 15px;
   border-radius: 3px;
   border: 1px solid #666;
+  transition: .3s;
 }
 
 .check-box:hover input ~ .checkmark {
@@ -381,7 +393,29 @@ section .md-form {
   color: $main-color;
 }
 
+.filter-category {
+  position: absolute;
+  margin-left: 200px;
+  z-index: 10;
 
+  select {
+    height: 32px;
+    font-size: 14px;
+    width: 200px;
+  }
+}
+
+.add-item {
+  select {
+    color: #585858;
+  }
+}
+
+#editor {
+  border: 1px solid #e1e1e1;
+  border-top: 0;
+  min-height: 300px;
+}
 
 
 @import 'media';

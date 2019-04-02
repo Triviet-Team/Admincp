@@ -17,8 +17,6 @@ $(document).ready(() => {
     $('.menu-down').removeClass('active');
 
     $('.overlay-menu').addClass('overlay-in');
-
-    $('.product-zone').toggleClass('out');
   });
 
   $('.menu .nav li').click(function() {
@@ -30,26 +28,42 @@ $(document).ready(() => {
     $('aside').removeClass('aside-mini');
   });
 
-  // NOTIFICATION ADD TO CART 
-  $('.custom-cart').click(() => {
-    Swal({
-      title: 'Thông báo',
-      type: 'success',
-      html: 'Bạn đã thêm vào giỏ thành công',
-      showCloseButton: true,
-      showCancelButton: true,
-      focusConfirm: false,
-      confirmButtonText:
-        '<a href="gio-hang.html">Vào giỏ hàng</a>',
-      cancelButtonText:
-        'Tiếp tục mua sắm',
-    })
-  });
-
   $("aside a").each( function () {
     if (pageUrl == (this.href)) {
       $(this).closest("li").addClass("active");
       $(this).parent().parent().parent().parent().addClass("active")
     }
   });
+
+
+
+  $('.table-responsive').on('change', 'input:checkbox', function() {
+    var atLeastOneIsChecked = $('input:checked').length;
+
+    if (this.checked) {
+      $('#active-all, #delete-all, #private-all').removeAttr('disabled');
+
+    } else if (atLeastOneIsChecked === 0) {
+      $('#active-all, #delete-all, #private-all').attr('disabled', 'disabled');
+    }
+  });
+
+  $('#check-all').change(function() {
+    var checkboxes = $(this).closest('.table-responsive').find(':checkbox');
+    checkboxes.prop('checked', $(this).is(':checked'));
+  });
+
 });
+
+// DecoupledEditor
+//   .create( document.querySelector( '#editor' ) )
+//   .then( editor => {
+//       const toolbarContainer = document.querySelector( '#toolbar-container' );
+
+//       toolbarContainer.appendChild( editor.ui.view.toolbar.element );
+//   } )
+//   .catch( error => {
+//       console.error( error );
+//   } );
+
+  
