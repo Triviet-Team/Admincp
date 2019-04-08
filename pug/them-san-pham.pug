@@ -22,23 +22,37 @@ block main
 
         .form-group
           .row
-            .col-md-4
+            .col-md-4.col-sm-6
               label.check-box.mb-2
                 input(type='checkbox')
                 span.checkmark
                 | Sản phẩm bán chạy
-            .col-md-4
+            .col-md-4.col-sm-6
               label.check-box.mb-2
                 input(type='checkbox')
                 span.checkmark
                 | Sản phẩm nổi bật
-            .col-md-4
+            .col-md-4.col-sm-6
               label.check-box.mb-2
                 input(type='checkbox')
                 span.checkmark
                 span Sản phẩm mới
              
-
+        .form-group
+          .row
+            .col-md-4.col-sm-6
+              .custom-control.custom-radio
+                input#radio1.custom-control-input(type='radio', name='groupOfDefaultRadios')
+                label.custom-control-label(for='radio1') Option 1
+            .col-md-4.col-sm-6
+              .custom-control.custom-radio
+                input#radio2.custom-control-input(type='radio', name='groupOfDefaultRadios')
+                label.custom-control-label(for='radio2') Option 1
+            .col-md-4.col-sm-6
+              .custom-control.custom-radio
+                input#radio3.custom-control-input(type='radio', name='groupOfDefaultRadios')
+                label.custom-control-label(for='radio3') Option 1
+            
 
         .md-form.mb-3
           input#titleSite.form-control.form-control-sm(type='text')
@@ -55,6 +69,10 @@ block main
         .md-form.mb-3
           input#code.form-control.form-control-sm(type='text')
           label(for='code') Mã số thuế
+        
+        .md-form.mb-3
+          input#date-time.form-control.form-control-sm(type='text')
+          label(for='date-time') Ngày giờ
 
         .form-group.mt-4.mb-3
           #toolbar-container

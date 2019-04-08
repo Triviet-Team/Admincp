@@ -133,7 +133,6 @@ const productTable = $('.product-table').DataTable({
     },
     { 
       "data": "id",
-      "sortable": false,
       "render": function(data, type, row) {
         return (
           `${row.id}`
@@ -245,7 +244,7 @@ const productTable = $('.product-table').DataTable({
   },
   "order": [[ 1, "desc" ]],
   "pagingType": "full_numbers",
-  "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "Tất cả"]],
+  "lengthMenu": [[3, 25, 50, -1], [10, 25, 50, "Tất cả"]],
 });
 
 filterCategory = () => {
@@ -334,4 +333,55 @@ $(document).ready(() => {
     })
   });
 
+  DecoupledEditor
+  .create( document.querySelector( '#editor' ) )
+  .then( editor => {
+      const toolbarContainer = document.querySelector( '#toolbar-container' );
+
+      toolbarContainer.appendChild( editor.ui.view.toolbar.element );
+  } )
+  .catch( error => {
+      console.error( error );
+  } );
+
+  $.fn.datepicker.language['vn'] = {
+    days: ['Chủ nhật', 'Thứ Hai', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    daysShort: ['CN', 'Hai', 'Ba', 'Tư', 'Năm', 'Sáu', 'Bảy'],
+    daysMin: ['CN', 'Hai', 'Ba', 'Tư', 'Năm', 'Sáu', 'Bảy'],
+    months: ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6', 'Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'],
+    monthsShort: ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6', 'Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'],
+    today: 'Hôm nay',
+    clear: 'Xóa',
+    dateFormat: 'dd/mm/yyyy',
+    timeFormat: 'hh:ii aa',
+    firstDay: 0
+  };
+
+  var start = new Date(),
+    prevDay,
+    startHours = 0;
+
+  // 09:00 AM
+  start.setHours(0);
+  start.setMinutes(0);
+
+  $('#date-time').datepicker({
+      timepicker: true,
+      language: 'vn',
+      startDate: start,
+      minHours: startHours,
+      maxHours: 24,
+      onSelect: function (fd, d, picker) {
+          if (!d) return;
+          var day = d.getDay();
+
+          if (prevDay != undefined && prevDay == day) return;
+          prevDay = day;
+
+          picker.update({
+              minHours: 0,
+              maxHours: 24
+          })
+      }
+  })
 })

@@ -17,6 +17,7 @@ $(document).ready(() => {
     $('.menu-down').removeClass('active');
 
     $('.overlay-menu').addClass('overlay-in');
+    $('body').addClass('active');
   });
 
   $('.menu .nav li').click(function() {
@@ -26,6 +27,7 @@ $(document).ready(() => {
   $('.overlay-menu, .menu-close').click(function() {
     $('.overlay-menu').removeClass('overlay-in');
     $('aside').removeClass('aside-mini');
+    $('body').removeClass('active');
   });
 
   $("aside a").each( function () {
@@ -38,32 +40,29 @@ $(document).ready(() => {
 
 
   $('.table-responsive').on('change', 'input:checkbox', function() {
-    var atLeastOneIsChecked = $('input:checked').length;
+
+    let checkboxLength = $('tbody').find('input:checkbox').length;
+    let checkedLength = $('tbody input:checked').length;
+
+    if (checkedLength < checkboxLength) {
+      $('#check-all').prop('checked', false);
+    } else if (checkedLength === checkboxLength)  {
+      $('#check-all').prop('checked', true);
+      $('#check-all').attr('checked', true);
+    }
 
     if (this.checked) {
       $('#active-all, #delete-all, #private-all').removeAttr('disabled');
 
-    } else if (atLeastOneIsChecked === 0) {
+    } else if (checkedLength === 0) {
       $('#active-all, #delete-all, #private-all').attr('disabled', 'disabled');
     }
   });
 
   $('#check-all').change(function() {
-    var checkboxes = $(this).closest('.table-responsive').find(':checkbox');
+    let checkboxes = $(this).closest('.table-responsive').find(':checkbox');
     checkboxes.prop('checked', $(this).is(':checked'));
   });
 
 });
 
-// DecoupledEditor
-//   .create( document.querySelector( '#editor' ) )
-//   .then( editor => {
-//       const toolbarContainer = document.querySelector( '#toolbar-container' );
-
-//       toolbarContainer.appendChild( editor.ui.view.toolbar.element );
-//   } )
-//   .catch( error => {
-//       console.error( error );
-//   } );
-
-  

@@ -94,7 +94,7 @@ body img {
   top: 0;
   z-index: 1001;
   display: none;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.05);
 }
 .overlay.overlay-in {
   display: block;
@@ -164,7 +164,7 @@ aside ul li .sub-menu li a:hover {
   transform: translateX(5px);
 }
 aside.aside-mini {
-  width: 270px;
+  width: 60px;
   transition: all 0.25s ease;
 }
 aside.aside-mini .logo {
@@ -179,22 +179,38 @@ aside.aside-mini ul li {
 aside.aside-mini .menu ul.nav li {
   margin: 10px 0;
 }
+aside.aside-mini .menu ul.nav li.active {
+  background: none;
+  color: #1E74DA;
+}
+aside.aside-mini .menu ul.nav li.active:hover {
+  background: none;
+}
 aside.aside-mini .menu ul.nav li.active span {
   color: #1E74DA !important;
+}
+aside.aside-mini .menu ul.nav li:hover {
+  background: #1E74DA;
+}
+aside.aside-mini .menu ul.nav li:hover ul li {
+  background: none;
 }
 aside.aside-mini .menu ul.nav li:hover .menu-title.mini, aside.aside-mini .menu ul.nav li:hover .collapse {
   transform: none;
   z-index: 1000;
   opacity: 1;
 }
-aside.aside-mini .menu ul.nav li i {
-  display: none;
-}
 aside.aside-mini .menu ul.nav li a {
+  margin: 0;
   padding: 10px 3px;
 }
 aside.aside-mini .menu ul.nav li a i {
+  padding: 0 15px;
+  font-size: 20px;
   display: inline-block;
+}
+aside.aside-mini .menu ul.nav li i {
+  display: none;
 }
 aside.aside-mini .menu ul.nav li ul li a {
   padding: 0 5px;
@@ -255,7 +271,9 @@ aside .menu ul.nav li i {
 }
 aside .logo {
   text-align: center;
-  padding: 10px 10px;
+  padding: 0;
+  padding-left: 5px;
+  padding-top: 7px;
   height: 70px;
   border-bottom: 1px solid #e1e1e1;
   position: fixed;
@@ -266,14 +284,40 @@ aside .logo {
   border-right: 1px solid #e1e1e1;
   background: white;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  transition: width ease 0.2s;
+}
+aside .logo .logo-large {
+  padding-bottom: 10px;
+  height: auto;
+  opacity: 1;
+}
+aside .logo .logo-large-mini {
+  height: 0;
+  opacity: 0;
 }
 aside .logo .logo-mini {
-  display: none;
+  height: 0;
+  opacity: 0;
+}
+aside .logo .logo-mini-mini {
+  height: auto;
+  opacity: 1;
+  padding-bottom: 12px;
 }
 
 main {
   width: calc(100% - 270px);
   transition: width 0.25s ease, margin 0.25s ease;
+}
+main.main-mini {
+  width: calc(100% - 60px);
+}
+
+article {
+  margin: 30px;
+  margin-top: 100px;
+  margin-bottom: 0;
+  min-height: calc(100vh - 200px);
 }
 
 header {
@@ -286,6 +330,9 @@ header {
   width: calc(100% - 270px);
   transition: width 0.25s ease, margin 0.25s ease;
   z-index: 1000;
+}
+header.header-mini {
+  width: calc(100% - 60px);
 }
 header .container-fluid {
   display: flex;
@@ -684,7 +731,7 @@ section .md-form label {
   display: block;
   position: relative;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 16px;
   margin-left: 5px;
   padding-left: 25px;
   color: #585858;
@@ -702,21 +749,20 @@ section .md-form label {
   position: absolute;
   top: 2px;
   left: 0;
-  height: 15px;
-  width: 15px;
-  border-radius: 3px;
+  height: 20px;
+  width: 20px;
   border: 1px solid #666;
   transition: 0.3s;
 }
 
 .check-box:hover input ~ .checkmark {
-  background: #1E74DA;
   border-color: #1E74DA;
 }
 
 .check-box input:checked ~ .checkmark {
-  background: #1E74DA;
-  border-color: #1E74DA;
+  background: none;
+  border-color: transparent;
+  transform: rotate(45deg);
 }
 .check-box input:checked ~ .checkmark .checkmark:after {
   display: block;
@@ -725,21 +771,26 @@ section .md-form label {
 .checkmark:after {
   content: "";
   position: absolute;
-  display: none;
 }
 
 .check-box input:checked ~ .checkmark:after {
-  display: block;
+  opacity: 1;
 }
 
 .check-box .checkmark:after {
+  content: "";
+  position: absolute;
   left: 4px;
-  top: 1px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
+  top: -3px;
+  width: 9px;
+  height: 18px;
+  border: solid #1E74DA;
   border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
+  opacity: 0;
+  transition: 0.3s;
+}
+.check-box .checkmark:after:hover {
+  border: 1px solid #1E74DA;
 }
 
 .check-box:hover {
@@ -757,8 +808,15 @@ section .md-form label {
   width: 200px;
 }
 
+.add-item {
+  color: #585858;
+}
 .add-item select {
   color: #585858;
+}
+.add-item .custom-control-label {
+  padding-top: 2px;
+  font-size: 14px;
 }
 
 #editor {
@@ -767,71 +825,6 @@ section .md-form label {
   min-height: 300px;
 }
 
-@media (max-width: 1921px) {
-  article {
-    margin: 30px;
-    margin-top: 100px;
-    margin-bottom: 0;
-    min-height: calc(100vh - 200px);
-  }
-
-  aside.aside-mini {
-    width: 60px;
-    transition: all 0.25s ease;
-  }
-  aside.aside-mini .nav li.active {
-    background: none;
-    color: #1E74DA;
-  }
-  aside.aside-mini .nav li.active:hover {
-    background: none;
-  }
-  aside.aside-mini .nav li.active span {
-    color: #1E74DA;
-  }
-  aside.aside-mini .nav li:hover {
-    background: #1E74DA;
-  }
-  aside.aside-mini .nav li:hover ul li {
-    background: none;
-  }
-  aside.aside-mini .nav li a {
-    margin: 0;
-  }
-  aside.aside-mini .nav li a i {
-    padding: 0 15px;
-    font-size: 20px;
-  }
-  aside .logo {
-    text-align: center;
-    height: 70px;
-    padding: 0;
-    padding-left: 5px;
-    padding-top: 7px;
-    transition: width ease 0.25s;
-  }
-  aside .logo .logo-large {
-    padding-bottom: 10px;
-  }
-  aside .logo .logo-large-mini {
-    display: none;
-  }
-  aside .logo .logo-mini {
-    display: none;
-  }
-  aside .logo .logo-mini-mini {
-    display: block;
-    padding-bottom: 12px;
-  }
-
-  main.main-mini {
-    width: calc(100% - 60px);
-  }
-
-  header.header-mini {
-    width: calc(100% - 60px);
-  }
-}
 @media (max-width: 1200px) {
   .overlay-menu {
     width: 100%;
@@ -848,7 +841,13 @@ section .md-form label {
   }
 
   body {
-    display: block;
+    transition: 0.3s;
+    position: relative;
+  }
+  body.active {
+    transform: translateX(270px);
+    position: fixed;
+    width: 100%;
   }
 
   aside {
@@ -860,9 +859,81 @@ section .md-form label {
     left: 0;
     overflow-y: scroll;
     height: 100vh;
+    width: 270px;
+    box-shadow: none;
+  }
+  aside .menu ul.nav li {
+    margin: 0;
+    margin-top: 15px;
+  }
+  aside .menu ul.nav li.active a {
+    background: #1E74DA;
+  }
+  aside .menu ul.nav li.active span {
+    color: white !important;
+  }
+  aside .menu ul.nav li.active i {
+    color: white;
+  }
+  aside .menu ul.nav li.active ul li a {
+    color: black;
+    background: none;
+  }
+  aside .menu ul.nav li.active ul li.active a {
+    color: #1E74DA;
+    background: none;
+  }
+  aside .menu ul.nav li:hover .menu-title.mini, aside .menu ul.nav li:hover .collapse {
+    transform: none;
+    z-index: 1000;
+    opacity: 1;
+  }
+  aside .menu ul.nav li i {
+    display: block;
+  }
+  aside .menu ul.nav li a {
+    padding: 10px 0 !important;
+    background: #e1e1e1;
+    color: black;
+  }
+  aside .menu ul.nav li a i {
+    display: inline-block;
+    font-size: 16px;
+  }
+  aside .menu ul.nav li ul li a {
+    background: none;
+    padding: 0 15px !important;
+  }
+  aside .menu ul.nav li .menu-title.mini {
+    position: relative;
+    width: auto;
+    left: auto;
+    top: auto;
+    height: 50px;
+    background: none;
+    border: 0;
+    box-shadow: none;
+    line-height: 0;
+    padding-left: 0;
+    transform: none;
+    color: black;
+    z-index: 1;
+    opacity: 1;
+  }
+  aside .menu ul.nav li .collapse {
+    position: relative;
+    width: auto;
+    left: auto;
+    top: auto;
+    padding-left: 0;
+    background: none;
+    border: 0;
+    box-shadow: none;
+    transform: none;
+    z-index: 1;
+    opacity: 1;
   }
   aside.aside-mini {
-    transform: none;
     width: 270px;
   }
   aside.aside-mini .logo {

@@ -37,95 +37,6 @@ $main-color: #1E74DA;
 // ------------------------------------------------------
 
 
-
-@media (max-width: 1921px) {
-  article {
-    margin: 30px;
-    margin-top: 100px;
-    margin-bottom: 0;
-    min-height: calc(100vh - 200px);
-  }
-
-  aside {
-    &.aside-mini {
-      width: 60px;
-      transition: all .25s ease;
-      
-      .nav li {
-        
-        &.active {
-          background: none;
-          color: $main-color;
-
-          &:hover {
-            background: none;
-          }
-
-          span {
-            color: $main-color;
-          }
-        }
-
-        &:hover {
-          background: $main-color;
-
-          ul li {
-            background: none;
-          }
-        }
-
-        a {
-          margin: 0;
-
-          i {
-            padding: 0 15px;
-            font-size: 20px;
-          }
-        }
-      }
-    }
-
-    .logo {
-      text-align: center;
-      height: 70px;
-      padding: 0;
-      padding-left: 5px;
-      padding-top: 7px;
-      transition: width ease .25s;
-
-      .logo-large {
-        padding-bottom: 10px;
-      }
-    
-      .logo-large-mini {
-        display: none;
-      }
-    
-      .logo-mini {
-        display: none;
-      }
-    
-      .logo-mini-mini {
-        display: block;
-        padding-bottom: 12px;
-      }
-    }
-  }
-
-  main {
-    &.main-mini {
-      width: calc(100% - 60px);
-    }  
-  }
-
-  header {
-    &.header-mini {
-      width: calc(100% - 60px);
-    }
-  }
-  
-}
-
 @media (max-width: 1200px) {
   .overlay-menu {
     width: 100%;
@@ -143,7 +54,14 @@ $main-color: #1E74DA;
   }
 
   body {
-    display: block;
+    transition: .3s;
+    position: relative;
+
+    &.active {
+      transform: translateX(270px);
+      position: fixed;
+      width: 100%;
+    }
   }
 
   aside {
@@ -155,9 +73,108 @@ $main-color: #1E74DA;
     left: 0;
     overflow-y: scroll;
     height: 100vh;
+    width: 270px;
+    box-shadow: none;
+
+    .menu {
+      ul.nav li {
+        margin: 0;
+        margin-top: 15px;
+
+        &.active {
+          a {
+            background: $main-color;
+          }
+
+          span {
+            color: white!important;
+          }
+
+          i {
+            color: white;
+          }
+
+          ul li{
+
+            a {
+              color: black;
+              background: none;
+            }
+
+            &.active {
+
+              a {
+                color: $main-color;
+                background: none;
+              }
+            }
+          }
+        }
+
+        &:hover {
+          .menu-title.mini, .collapse {
+            transform: none;
+            z-index: 1000;
+            opacity: 1;
+          }
+        }
+
+        i {
+          display: block;
+        }
+
+        a {
+          padding: 10px 0!important;
+          background: #e1e1e1;
+          color: black;
+
+          i {
+            display: inline-block;
+            font-size: 16px;
+          }
+        }
+
+        ul li {            
+          a {
+            background: none;
+            padding: 0 15px!important;
+          }
+        }
+
+        .menu-title.mini {
+          position: relative;
+          width: auto;
+          left: auto;
+          top: auto;
+          height: 50px;
+          background: none;
+          border: 0;
+          box-shadow: none;
+          line-height: 0;
+          padding-left: 0;
+          transform: none;
+          color: black;
+          z-index: 1;
+          opacity: 1;
+        }
+
+        .collapse {
+          position: relative;
+          width: auto;
+          left: auto;
+          top: auto;
+          padding-left: 0;
+          background: none;
+          border: 0;
+          box-shadow: none;
+          transform: none;
+          z-index: 1;
+          opacity: 1;
+        }
+      }
+    }
 
     &.aside-mini {
-      transform: none;
       width: 270px;
 
       .logo {
